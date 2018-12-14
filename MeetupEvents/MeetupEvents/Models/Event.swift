@@ -50,11 +50,19 @@ struct Event: Codable {
     let timezone: String
     struct Photo: Codable {
       let id: Int
-      let highres_link: URL
-      let photo_link: URL
-      let thumb_link: URL
+      let highresLink: URL
+      let photoLink: URL
+      let thumbLink: URL
       let type: String
-      let base_url: URL
+      let baseURL: URL
+      private enum CodingKeys: String, CodingKey {
+        case id
+        case highresLink = "highres_link"
+        case photoLink = "photo_link"
+        case thumbLink = "thumb_link"
+        case type
+        case baseURL = "base_url"
+      }
     }
     let photo: Photo?
   }
@@ -62,4 +70,11 @@ struct Event: Codable {
   let link: URL
   let description: String?
   let visibility: String
+}
+
+
+extension String {
+  func stripHTML() -> String {
+    return self.replacingOccurrences(of: "<[^>]+>", with: "", options: .regularExpression, range: nil)
+  }
 }

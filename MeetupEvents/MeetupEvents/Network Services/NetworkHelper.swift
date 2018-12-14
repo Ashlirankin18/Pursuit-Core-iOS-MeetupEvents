@@ -9,34 +9,28 @@
 import Foundation
 
 final class NetworkHelper {
-  static func performDataTask(urlString: String, httpMethod: String, completionHandler: @escaping (Error?, Data?) ->Void) {
+  static func performDataTask(urlString: String, httpMethod: String, completionHandler: @escaping (APIError?, Data?) ->Void) {
     guard let url = URL(string: urlString) else {
-      print("badURL: \(urlString)")
+      completionHandler(APIError.badURL("badURL: \(urlString)"), nil)
       return
     }
-    
-    // so far we've been using URL to make network request
-    // now we will use URLRequest to make network requests
-    // URLRequest gives us the ability to package more metadata
-    // into our network request e.g httpMethod type
-    
-    // metadata: extra information about an object
     var request = URLRequest(url: url)
     request.httpMethod = httpMethod
-    
-    // use URLSession to make network request
     URLSession.shared.dataTask(with: request) { (data, response, error) in
-      // handle error
       if let error = error {
-        completionHandler(error, nil)
+        completionHandler(APIError.networkError(error), nil)
       }
-      
-      // get response status code
       if let response = response as? HTTPURLResponse {
         print("response status code is \(response.statusCode)")
+        guard response.statusCode >= 200 && response.statusCode < 300 else {
+          if let data = data {
+            completionHandler(APIError.badStatusCode(response.statusCode), data)
+          } else {
+            completionHandler(APIError.badStatusCode(response.statusCode), nil)
+          }
+          return
+        }
       }
-      
-      // check for data
       if let data = data {
         completionHandler(nil, data)
       }

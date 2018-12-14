@@ -16,6 +16,12 @@
 		574C7AC921C16716004D1311 /* MeetupAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C7AC821C16716004D1311 /* MeetupAPIClient.swift */; };
 		574C7ACB21C16842004D1311 /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C7ACA21C16842004D1311 /* SecretKeys.swift */; };
 		574C7ACD21C17534004D1311 /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 574C7ACC21C17534004D1311 /* NetworkHelper.swift */; };
+		57E9543821C2C9A50002A991 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9543721C2C9A50002A991 /* ImageHelper.swift */; };
+		57E9543A21C2C9ED0002A991 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9543921C2C9ED0002A991 /* APIError.swift */; };
+		57E9543D21C2D8590002A991 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9543C21C2D8590002A991 /* EventCell.swift */; };
+		57E9544021C2F2040002A991 /* MeetupDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9543F21C2F2040002A991 /* MeetupDetailController.swift */; };
+		57E9544321C2F62D0002A991 /* RSVP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9544221C2F62D0002A991 /* RSVP.swift */; };
+		57E9544521C2FA920002A991 /* BadRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E9544421C2FA920002A991 /* BadRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +36,12 @@
 		574C7AC821C16716004D1311 /* MeetupAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupAPIClient.swift; sourceTree = "<group>"; };
 		574C7ACA21C16842004D1311 /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
 		574C7ACC21C17534004D1311 /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		57E9543721C2C9A50002A991 /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
+		57E9543921C2C9ED0002A991 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		57E9543C21C2D8590002A991 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		57E9543F21C2F2040002A991 /* MeetupDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetupDetailController.swift; sourceTree = "<group>"; };
+		57E9544221C2F62D0002A991 /* RSVP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSVP.swift; sourceTree = "<group>"; };
+		57E9544421C2FA920002A991 /* BadRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +74,10 @@
 		574C7AB221C1619F004D1311 /* MeetupEvents */ = {
 			isa = PBXGroup;
 			children = (
-				574C7AB521C1619F004D1311 /* MeetupEventsController.swift */,
-				574C7AC621C1620F004D1311 /* Event.swift */,
-				574C7ACC21C17534004D1311 /* NetworkHelper.swift */,
-				574C7ACA21C16842004D1311 /* SecretKeys.swift */,
-				574C7AC821C16716004D1311 /* MeetupAPIClient.swift */,
+				57E9543621C2C9770002A991 /* Network Services */,
+				57E9543B21C2CD370002A991 /* Models */,
+				57E9543E21C2D85E0002A991 /* Views */,
+				57E9544121C2F20A0002A991 /* Controllers */,
 				574C7AB721C1619F004D1311 /* Main.storyboard */,
 				574C7AC521C161C4004D1311 /* Supporting Files */,
 				574C7ABF21C161A0004D1311 /* Info.plist */,
@@ -82,6 +93,45 @@
 				574C7ABC21C161A0004D1311 /* LaunchScreen.storyboard */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57E9543621C2C9770002A991 /* Network Services */ = {
+			isa = PBXGroup;
+			children = (
+				574C7ACC21C17534004D1311 /* NetworkHelper.swift */,
+				57E9543721C2C9A50002A991 /* ImageHelper.swift */,
+				57E9543921C2C9ED0002A991 /* APIError.swift */,
+				574C7ACA21C16842004D1311 /* SecretKeys.swift */,
+				574C7AC821C16716004D1311 /* MeetupAPIClient.swift */,
+			);
+			path = "Network Services";
+			sourceTree = "<group>";
+		};
+		57E9543B21C2CD370002A991 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				574C7AC621C1620F004D1311 /* Event.swift */,
+				57E9544221C2F62D0002A991 /* RSVP.swift */,
+				57E9544421C2FA920002A991 /* BadRequest.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		57E9543E21C2D85E0002A991 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57E9543C21C2D8590002A991 /* EventCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		57E9544121C2F20A0002A991 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				574C7AB521C1619F004D1311 /* MeetupEventsController.swift */,
+				57E9543F21C2F2040002A991 /* MeetupDetailController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,11 +206,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				574C7AB621C1619F004D1311 /* MeetupEventsController.swift in Sources */,
+				57E9543D21C2D8590002A991 /* EventCell.swift in Sources */,
 				574C7AC921C16716004D1311 /* MeetupAPIClient.swift in Sources */,
 				574C7AC721C1620F004D1311 /* Event.swift in Sources */,
 				574C7AB421C1619F004D1311 /* AppDelegate.swift in Sources */,
 				574C7ACD21C17534004D1311 /* NetworkHelper.swift in Sources */,
+				57E9544321C2F62D0002A991 /* RSVP.swift in Sources */,
+				57E9544021C2F2040002A991 /* MeetupDetailController.swift in Sources */,
+				57E9543A21C2C9ED0002A991 /* APIError.swift in Sources */,
 				574C7ACB21C16842004D1311 /* SecretKeys.swift in Sources */,
+				57E9543821C2C9A50002A991 /* ImageHelper.swift in Sources */,
+				57E9544521C2FA920002A991 /* BadRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
